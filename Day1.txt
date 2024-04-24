@@ -1,0 +1,49 @@
+1.Write a blog on Difference between HTTP1.1 vs HTTP2.
+
+Multiplexing:
+
+HTTP/1.1: It uses a request/response model where only one request can be outstanding on a connection at a time. If multiple resources need to be fetched, they have to wait in line, leading to potential latency issues.
+HTTP/2: It introduces multiplexing, allowing multiple requests and responses to be sent and received simultaneously over a single TCP connection. This reduces latency and improves overall efficiency.
+
+Header Compression:
+
+HTTP/1.1: Headers are sent with each request and response, often containing redundant information. This can lead to increased overhead, especially for small requests and responses.
+HTTP/2: It uses header compression, which reduces the overhead associated with sending headers. This optimization can significantly improve performance, especially for high-latency connections.
+
+Binary Protocol:
+
+HTTP/1.1: It uses plain text for both headers and data, which can be verbose and inefficient, especially for large payloads.
+HTTP/2: It uses a binary framing layer, which reduces the overhead of parsing and transmitting data. This makes the protocol more efficient, especially for large payloads.
+
+Server Push:
+
+HTTP/1.1: Clients must explicitly request each resource they need, even if the server knows that additional resources will be required to fully render a page.
+HTTP/2: It introduces server push, allowing servers to proactively send additional resources to the client that it predicts will be needed. This can improve page load times by reducing the number of round trips required to fetch all necessary resources.
+
+Flow Control:
+
+HTTP/1.1: It lacks built-in support for flow control, which can lead to issues such as congestion and poor performance, especially over high-latency connections.
+HTTP/2: It includes support for flow control, allowing clients and servers to regulate the rate at which data is transmitted. This helps to prevent congestion and ensures that resources are allocated efficiently.
+
+
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+2.Write a blog about objects and its internal representation in Javascript.
+
+Objects are one of the most important forms of non-primitve data-types in JavaScript.Objects are more complex and each object may contain any combination of these primitive data-types as well as reference data-types.An object, is a reference data type. Variables that are assigned a reference value are given a reference or a pointer to that value. That reference or pointer points to the location in memory where the object is stored. The variables don’t actually store the value.
+
+eg.,
+
+const student={
+name: 'John Doe',
+rollno: 16,
+details(){
+	console.log('Student name: ${this.name} ; Student Roll  no.: ${this.rollno} ');
+	}
+};
+
+studeent.detail(); //to display the details of the student.
